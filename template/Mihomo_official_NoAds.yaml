@@ -307,16 +307,8 @@ rule-providers:
     path: ./ruleset/Private_Domain.mrs
   private_ip:
     <<: *ipcidr_mrs
-    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs"
-    path: ./ruleset/Private_IP.mrs
-  biliintl_domain:
-    <<: *domain_mrs
     url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/private.ip.mrs"
-    path: ./ruleset/biliintl_domain.mrs
-  ehentai_domain:
-    <<: *domain_mrs
-    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/ehentai.mrs"
-    path: ./ruleset/ehentai_domain.mrs
+    path: ./ruleset/Private_IP.mrs
   github_domain:
     <<: *domain_mrs
     url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/github.mrs"
@@ -343,11 +335,11 @@ rule-providers:
     path: ./ruleset/netflix_domain.mrs
   OpenAI_domain:
     <<: *domain_mrs
-    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bilibili.mrs"
+    url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/openai.mrs"
     path: ./ruleset/OpenAI_domain.mrs
   Discord_domain:
     <<: *domain_mrs
-    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bahamut.mrs"
+    url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/discord.mrs"
     path: ./ruleset/Discord_domain.mrs
   spotify_domain:
     <<: *domain_mrs
@@ -355,15 +347,11 @@ rule-providers:
     path: ./ruleset/spotify_domain.mrs
   Microsoft_domain:
     <<: *domain_mrs
-    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pixiv.mrs"
+    url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/microsoft.mrs"
     path: ./ruleset/Microsoft_domain.mrs
-  GoogleVoice_domain:
-    <<: *domain_mrs
-    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bilibili.mrs"
-    path: ./ruleset/GoogleVoice_domain.mrs
  Twitch_domain:
     <<: *domain_mrs
-    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bilibili.mrs"
+    url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/twitch.mrs"
     path: ./ruleset/Twitch_domain.mrs  
   geolocation-!cn:
     <<: *domain_mrs
