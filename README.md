@@ -39,11 +39,6 @@ Mihomo（Clash Meta）是一款高效的订阅汇聚工具，支持快速生成 
   - 谷歌版本
   - GitHub版本
 
-## 🖥 在线控制台
-
-[![访问在线配置生成器](https://img.shields.io/badge/访问在线配置生成器-基于vercel-blue?style=for-the-badge)](https://sub.ikar.eu.org)
-
-[![访问在线配置生成器](https://img.shields.io/badge/访问在线配置生成器-基于cloudflare_workers-blue?style=for-the-badge)](https://substore.haxtop.ggff.net)
 
 ### 💡 使用建议
 1. 关闭所有覆写功能（非关闭功能本身）
