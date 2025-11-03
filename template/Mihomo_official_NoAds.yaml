@@ -279,12 +279,12 @@ sub-rules:
     - RULE-SET,google_domain,Google
     - RULE-SET,telegram_domain,Telegram
     - RULE-SET,netflix_domain,NETFLIX
-    - RULE-SET,ehentai_domain,Ehentai
-    - RULE-SET,bilibili_domain,哔哩哔哩
-    - RULE-SET,biliintl_domain,哔哩哔哩国际版
-    - RULE-SET,bahamut_domain,巴哈姆特
+    - RULE-SET,OpenAI_domain,OpenAI
+    - RULE-SET,Discord_domain,Discord
+    - RULE-SET,Microsoft_domain,Microsoft
+    - RULE-SET,GoogleVoice_domain,GoogleVoice
     - RULE-SET,spotify_domain,Spotify
-    - RULE-SET,pixiv_domain,Pixiv
+    - RULE-SET,Twitch_domain,Twitch
     - RULE-SET,geolocation-!cn,🚀全球代理
     - RULE-SET,google_ip,Google,no-resolve
     - RULE-SET,netflix_ip,NETFLIX,no-resolve
