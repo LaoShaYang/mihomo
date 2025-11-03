@@ -84,7 +84,7 @@ npm run deploy
 ### 2️⃣ Cloudflare Workers 部署
 
 #### 方法一：一键部署
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Kwisma/cf-worker-mihomo)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/LaoShaYang/mihomo)
 
 **配置参数**：
 - 构建命令：`npm run build`
