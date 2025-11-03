@@ -21,7 +21,6 @@ proxy-groups:
   - { name: OpenAI, <<: *direct, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/OpenAI.webp }
   - { name: Discord, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Discord.webp }
   - { name: Microsoft, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Microsoft.webp }
-  - { name: GoogleVoice, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/GoogleVoice.webp }
   - { name: YouTube, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/YouTube.webp }
   - { name: NETFLIX, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Netflix.webp }
   - { name: Spotify, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Spotify.webp }
@@ -282,7 +281,6 @@ sub-rules:
     - RULE-SET,OpenAI_domain,OpenAI
     - RULE-SET,Discord_domain,Discord
     - RULE-SET,Microsoft_domain,Microsoft
-    - RULE-SET,GoogleVoice_domain,GoogleVoice
     - RULE-SET,spotify_domain,Spotify
     - RULE-SET,Twitch_domain,Twitch
     - RULE-SET,geolocation-!cn,🚀全球代理
