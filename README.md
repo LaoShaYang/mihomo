@@ -117,8 +117,8 @@ npm run deploy
 | `SUB`        | 转换后端地址        | [Sub-Store-node]([https://github.com/Kwisma/Sub-Store-node)    |
 | `BEIAN`      | 备案信息           | `萌ICP备20250001号`                                            |
 | `BEIANURL`   | 备案跳转链接       | `https://t.me/Marisa_kristi`                                  |
-| `MIHOMO`     | mihomo规则模板     | `https://raw.githubusercontent.com/LaoShaYang/mihomo/main/template/Mihomo_default.yaml` |
-| `SINGBOX`     | singbox规则模板   | `https://raw.githubusercontent.com/LaoShaYang/mihomo/main/template/singbox_default.yaml` |
+| `MIHOMO`     | mihomo规则模板     | `https://raw.githubusercontent.com/LaoShaYang/mihomo/refs/heads/main/template/Mihomo_official_NoAds.yaml` |
+| `SINGBOX`     | singbox规则模板   | `https://raw.githubusercontent.com/LaoShaYang/mihomo/refs/heads/main/template/singbox_default.yaml` |
 ---
 
 
