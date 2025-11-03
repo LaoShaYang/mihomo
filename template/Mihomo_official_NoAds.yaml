@@ -347,7 +347,7 @@ rule-providers:
     <<: *domain_mrs
     url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs"
     path: ./ruleset/Microsoft_domain.mrs
- Twitch_domain:
+  Twitch_domain:
     <<: *domain_mrs
     url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitch.mrs"
     path: ./ruleset/Twitch_domain.mrs  
