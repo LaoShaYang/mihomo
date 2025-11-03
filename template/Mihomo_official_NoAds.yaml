@@ -15,18 +15,18 @@ proxy-groups:
   - { name: ♻️自动选择, <<: *u, tolerance: 1, type: url-test }
   - { name: ⚡️均衡负载, <<: *u, strategy: round-robin, type: load-balance }
   - { name: 🔯故障转移, <<: *u, type: fallback }
-  - { name: Google, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/Google.webp }
-  - { name: Telegram, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/Telegram.webp }
-  - { name: Twitter, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/Twitter.webp }
-  - { name: OpenAI, <<: *direct, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/OpenAI.webp }
-  - { name: Discord, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/Discord.webp }
-  - { name: Microsoft, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/Microsoft.webp }
-  - { name: GoogleVoice, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/GoogleVoice.webp }
-  - { name: YouTube, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/YouTube.webp }
-  - { name: NETFLIX, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/Netflix.webp }
-  - { name: Spotify, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/Spotify.webp }
-  - { name: Github, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/GitHub.webp }
-  - { name: Twitch, <<: *proxy, icon: https://jsd.onmicrosoft.cn/gh/Kwisma/rules@main/icon/webp/100/Twitch.webp }
+  - { name: Google, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Google.webp }
+  - { name: Telegram, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Telegram.webp }
+  - { name: Twitter, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Twitter.webp }
+  - { name: OpenAI, <<: *direct, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/OpenAI.webp }
+  - { name: Discord, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Discord.webp }
+  - { name: Microsoft, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Microsoft.webp }
+  - { name: GoogleVoice, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/GoogleVoice.webp }
+  - { name: YouTube, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/YouTube.webp }
+  - { name: NETFLIX, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Netflix.webp }
+  - { name: Spotify, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Spotify.webp }
+  - { name: Github, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/GitHub.webp }
+  - { name: Twitch, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Twitch.webp }
   ############ 全国家分组自动选择 ############
   - { name: 🇺🇸美国自动, <<: *u, hidden: true, filter: "(?i)(?:🇺🇸|(?:^|[\\s_-])(US)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*US(?=$|[\\s_-])|美国|United States|(?:(?:^|[\\s_-])CT(?=$|[\\s_-]))|UnitedStates)" }
   - { name: 🇧🇷巴西自动, <<: *u, hidden: true, filter: "(?i)(?:🇧🇷|(?:^|[\\s_-])(BR)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*BR(?=$|[\\s_-])|巴西|Brazil)" }
