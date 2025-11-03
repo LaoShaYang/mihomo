@@ -110,7 +110,7 @@ npm run deploy
 | 参数名       | 说明               | 示例值                                                          |
 |--------------|--------------------|---------------------------------------------------------------|
 | `IMG`        | 背景图 URL         | `https://t.alcy.cc/ycy`                                       |
-| `SUB`        | 转换后端地址        | [Sub-Store-node](https://github.com/Kwisma/Sub-Store-node)    |
+| `SUB`        | 转换后端地址        | [Sub-Store-node](https://github.com/sub.214120.cn/)    |
 | `BEIAN`      | 备案信息           | `萌ICP备20250001号`                                            |
 | `BEIANURL`   | 备案跳转链接       | `https://t.me/Marisa_kristi`                                  |
 | `MIHOMO`     | mihomo规则模板     | `https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/Mihomo_default.yaml` |
