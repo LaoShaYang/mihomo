@@ -333,11 +333,11 @@ rule-providers:
     path: ./ruleset/netflix_domain.mrs
   OpenAI_domain:
     <<: *domain_mrs
-    url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/openai.mrs"
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs"
     path: ./ruleset/OpenAI_domain.mrs
   Discord_domain:
     <<: *domain_mrs
-    url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/discord.mrs"
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/discord.mrs"
     path: ./ruleset/Discord_domain.mrs
   spotify_domain:
     <<: *domain_mrs
@@ -345,11 +345,11 @@ rule-providers:
     path: ./ruleset/spotify_domain.mrs
   Microsoft_domain:
     <<: *domain_mrs
-    url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/microsoft.mrs"
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs"
     path: ./ruleset/Microsoft_domain.mrs
  Twitch_domain:
     <<: *domain_mrs
-    url: "https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/twitch.mrs"
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitch.mrs"
     path: ./ruleset/Twitch_domain.mrs  
   geolocation-!cn:
     <<: *domain_mrs
