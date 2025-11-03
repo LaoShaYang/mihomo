@@ -1,6 +1,5 @@
 # 🧰 Mihomo（Clash Meta）/ singbox 配置生成工具
 
-![Mihomo Logo](./icon/icon.png)
 
 # 🚀 Mihomo (Clash Meta) 订阅汇聚工具
 
@@ -123,10 +122,4 @@ npm run deploy
 | `SINGBOX`     | singbox规则模板   | `https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/singbox_default.yaml` |
 ---
 
-## 🤝 参与贡献
-欢迎通过以下方式参与：
-- 提交 [Issue](https://github.com/Kwisma/cf-worker-mihomo/issues)
-- 发起 [Pull Request](https://github.com/Kwisma/cf-worker-mihomo/pulls)
 
-## 📜 开源协议
-[MIT License](LICENSE) © 2025 Kwisma
