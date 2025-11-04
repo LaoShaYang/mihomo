@@ -1,8 +1,8 @@
 u: &u { type: url-test, tolerance: 1, strategy: consistent-hashing, url: https://www.gstatic.com/generate_204, interval: 300, lazy: true, timeout: 5000, max-failed-times: 5, include-all: true }
 domain_mrs: &domain_mrs { type: http, interval: 86400, behavior: domain, format: mrs, proxy: 🎯全球直连 }
 ipcidr_mrs: &ipcidr_mrs { type: http, interval: 86400, behavior: ipcidr, format: mrs, proxy: 🎯全球直连 }
-proxy: &proxy { type: select, include-all: true, proxies: [🚀全球代理, 🎯全球直连, ♻️自动选择, ⚡️均衡负载, 🔯故障转移, 🇭🇰香港自动, 🇹🇼台湾自动, 🇸🇬新加坡自动, 🇯🇵日本自动, 🇰🇷韩国自动, 🇺🇸美国自动] }
-direct: &direct { type: select, include-all: true, proxies: [🎯全球直连, 🚀全球代理, ♻️自动选择, ⚡️均衡负载, 🔯故障转移, 🇭🇰香港自动, 🇹🇼台湾自动, 🇸🇬新加坡自动, 🇯🇵日本自动, 🇰🇷韩国自动, 🇺🇸美国自动] }
+proxy: &proxy { type: select, include-all: true, proxies: [🚀默认代理, 🎯全球直连, ♻️自动选择, ⚡️均衡负载, 🔯故障转移, 🇭🇰香港自动, 🇹🇼台湾自动, 🇸🇬新加坡自动, 🇯🇵日本自动, 🇰🇷韩国自动, 🇺🇸美国自动] }
+direct: &direct { type: select, include-all: true, proxies: [🎯全球直连, 🚀默认代理, ♻️自动选择, ⚡️均衡负载, 🔯故障转移, 🇭🇰香港自动, 🇹🇼台湾自动, 🇸🇬新加坡自动, 🇯🇵日本自动, 🇰🇷韩国自动, 🇺🇸美国自动] }
 
 
 proxy-groups:
@@ -143,3 +143,4 @@ rule-providers:
     <<: *ipcidr_mrs
     url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs"
     path: ./ruleset/telegram_ip.mrs
+
