@@ -1,0 +1,145 @@
+u: &u { type: url-test, tolerance: 1, strategy: consistent-hashing, url: https://www.gstatic.com/generate_204, interval: 300, lazy: true, timeout: 5000, max-failed-times: 5, include-all: true }
+domain_mrs: &domain_mrs { type: http, interval: 86400, behavior: domain, format: mrs, proxy: 🎯全球直连 }
+ipcidr_mrs: &ipcidr_mrs { type: http, interval: 86400, behavior: ipcidr, format: mrs, proxy: 🎯全球直连 }
+proxy: &proxy { type: select, include-all: true, proxies: [🚀全球代理, 🎯全球直连, ♻️自动选择, ⚡️均衡负载, 🔯故障转移, 🇭🇰香港自动, 🇹🇼台湾自动, 🇸🇬新加坡自动, 🇯🇵日本自动, 🇰🇷韩国自动, 🇺🇸美国自动] }
+direct: &direct { type: select, include-all: true, proxies: [🎯全球直连, 🚀全球代理, ♻️自动选择, ⚡️均衡负载, 🔯故障转移, 🇭🇰香港自动, 🇹🇼台湾自动, 🇸🇬新加坡自动, 🇯🇵日本自动, 🇰🇷韩国自动, 🇺🇸美国自动] }
+
+
+proxy-groups:
+  - { name: 🚀默认代理, type: select, proxies: [♻️自动选择, 🟢手动选择, ⚡️均衡负载, 🔯故障转移, 🎯全局直连] }
+  - { name: ♻️自动选择, <<: *u, tolerance: 1, type: url-test }
+  - { name: 🟢手动选择, <<: *u, type: select }
+  - { name: ⚡️均衡负载, <<: *u, strategy: round-robin, type: load-balance }
+  - { name: 🔯故障转移, <<: *u, type: fallback }
+  - { name: 🎯全局直连, type: select, hidden: true, proxies: [DIRECT] }
+  - { name: 🎯全球直连, type: select, proxies: [🎯全局直连, 🚀默认代理] }
+  - { name: Google, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Google.webp }
+  - { name: Telegram, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Telegram.webp }
+  - { name: Twitter, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Twitter.webp }
+  - { name: OpenAI, <<: *direct, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/OpenAI.webp }
+  - { name: Discord, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Discord.webp }
+  - { name: Microsoft, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Microsoft.webp }
+  - { name: YouTube, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/YouTube.webp }
+  - { name: NETFLIX, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Netflix.webp }
+  - { name: Spotify, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Spotify.webp }
+  - { name: Github, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/GitHub.webp }
+  - { name: Twitch, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Twitch.webp }
+  - { name: Cloudflare, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Cloudflare.webp }
+
+  ############ 全国家分组自动选择 ############
+  - { name: 🇭🇰香港自动, <<: *u, hidden: true, filter: "(?i)(?:🇭🇰|(?:^|[\\s_-])(HK)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*HK(?=$|[\\s_-])|香港|Hong Kong|HongKong)" }
+  - { name: 🇹🇼台湾自动, <<: *u, hidden: true, filter: "(?i)(?:🇹🇼|(?:^|[\\s_-])(TW)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*TW(?=$|[\\s_-])|台湾|Taiwan|Tai wan)" }
+  - { name: 🇸🇬新加坡自动, <<: *u, hidden: true, filter: "(?i)(?:🇸🇬|(?:^|[\\s_-])(SG)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*SG(?=$|[\\s_-])|新加坡|Singapore)" }
+  - { name: 🇯🇵日本自动, <<: *u, hidden: true, filter: "(?i)(?:🇯🇵|(?:^|[\\s_-])(JP)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*JP(?=$|[\\s_-])|日本|Japan)" }
+  - { name: 🇰🇷韩国自动, <<: *u, hidden: true, filter: "(?i)(?:🇰🇷|(?:^|[\\s_-])(KR)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*KR(?=$|[\\s_-])|韩国|Korea, Republic of)" }
+  - { name: 🇺🇸美国自动, <<: *u, hidden: true, filter: "(?i)(?:🇺🇸|(?:^|[\\s_-])(US)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*US(?=$|[\\s_-])|美国|United States|(?:(?:^|[\\s_-])CT(?=$|[\\s_-]))|UnitedStates)" }
+
+rules:
+  - SUB-RULE,(OR,((NETWORK,UDP),(NETWORK,TCP))),SUB-RULES
+  - MATCH,🚀默认代理
+
+sub-rules:
+  SUB-RULES:
+    - RULE-SET,github_domain,Github
+    - RULE-SET,twitter_domain,Twitter
+    - RULE-SET,youtube_domain,YouTube
+    - RULE-SET,google_domain,Google
+    - RULE-SET,telegram_domain,Telegram
+    - RULE-SET,netflix_domain,NETFLIX
+    - RULE-SET,OpenAI_domain,OpenAI
+    - RULE-SET,Discord_domain,Discord
+    - RULE-SET,Microsoft_domain,Microsoft
+    - RULE-SET,spotify_domain,Spotify
+    - RULE-SET,Twitch_domain,Twitch
+    - RULE-SET,Cloudflare_domain,Cloudflare
+    - RULE-SET,geolocation-!cn,🚀默认代理
+    - RULE-SET,netflix_ip,NETFLIX,no-resolve
+    - RULE-SET,telegram_ip,Telegram,no-resolve
+    - RULE-SET,twitter_ip,Twitter,no-resolve
+    - OR,((AND,((RULE-SET,cn_domain),(RULE-SET,cn_ip))),(RULE-SET,cn_ip),(RULE-SET,private_domain),(RULE-SET,private_ip,no-resolve)),🎯全球直连
+
+rule-providers:
+  cn_domain:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/Kwisma/clash-rules@release/direct.mrs"
+    path: ./ruleset/CN_Domain.mrs
+  cn_ip:
+    <<: *ipcidr_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/Kwisma/clash-rules@release/cncidr.mrs"
+    path: ./ruleset/CN_IP.mrs
+  private_domain:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs"
+    path: ./ruleset/Private_Domain.mrs
+  private_ip:
+    <<: *ipcidr_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs"
+    path: ./ruleset/Private_IP.mrs
+  github_domain:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs"
+    path: ./ruleset/github_domain.mrs
+  twitter_domain:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.mrs"
+    path: ./ruleset/twitter_domain.mrs
+  youtube_domain:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs"
+    path: ./ruleset/youtube_domain.mrs
+  google_domain:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.mrs"
+    path: ./ruleset/google_domain.mrs
+  telegram_domain:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.mrs"
+    path: ./ruleset/telegram_domain.mrs
+  netflix_domain:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.mrs"
+    path: ./ruleset/netflix_domain.mrs
+  OpenAI_domain:
+    <<: *domain_mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs"
+    path: ./ruleset/OpenAI_domain.mrs
+  Discord_domain:
+    <<: *domain_mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/discord.mrs"
+    path: ./ruleset/Discord_domain.mrs
+  spotify_domain:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.mrs"
+    path: ./ruleset/spotify_domain.mrs
+  Microsoft_domain:
+    <<: *domain_mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs"
+    path: ./ruleset/Microsoft_domain.mrs
+  Twitch_domain:
+    <<: *domain_mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitch.mrs"
+    path: ./ruleset/Twitch_domain.mrs
+  Cloudflare_domain:
+    <<: *domain_mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cloudflare.mrs"
+    path: ./ruleset/Cloudflare_domain.mrs
+  geolocation-!cn:
+    <<: *domain_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.mrs"
+    path: ./ruleset/geolocation-!cn.mrs 
+  google_ip:
+    <<: *ipcidr_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.mrs"
+    path: ./ruleset/google_ip.mrs
+  netflix_ip:
+    <<: *ipcidr_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/netflix.mrs"
+    path: ./ruleset/netflix_ip.mrs
+  twitter_ip:
+    <<: *ipcidr_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/twitter.mrs"
+    path: ./ruleset/twitter_ip.mrs
+  telegram_ip:
+    <<: *ipcidr_mrs
+    url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs"
+    path: ./ruleset/telegram_ip.mrs
