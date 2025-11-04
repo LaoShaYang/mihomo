@@ -26,6 +26,8 @@ proxy-groups:
   - { name: Spotify, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Spotify.webp }
   - { name: Github, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/GitHub.webp }
   - { name: Twitch, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Twitch.webp }
+  - { name: Twitch, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Twitch.webp }
+  - { name: Cloudflare, <<: *proxy, icon: https://cdn.jsdelivr.net/gh/LaoShaYang/picGO@main/Cloudflare.webp }
   ############ 全国家分组自动选择 ############
   - { name: 🇺🇸美国自动, <<: *u, hidden: true, filter: "(?i)(?:🇺🇸|(?:^|[\\s_-])(US)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*US(?=$|[\\s_-])|美国|United States|(?:(?:^|[\\s_-])CT(?=$|[\\s_-]))|UnitedStates)" }
   - { name: 🇧🇷巴西自动, <<: *u, hidden: true, filter: "(?i)(?:🇧🇷|(?:^|[\\s_-])(BR)(?:(?=$|[\\s_-])|(?:[-_0-9]+(?=$|[\\s_-])))|(?:^|[\\s_-])[-_0-9]*BR(?=$|[\\s_-])|巴西|Brazil)" }
@@ -283,6 +285,7 @@ sub-rules:
     - RULE-SET,Microsoft_domain,Microsoft
     - RULE-SET,spotify_domain,Spotify
     - RULE-SET,Twitch_domain,Twitch
+    - RULE-SET,Cloudflare_domain,Cloudflare
     - RULE-SET,geolocation-!cn,🚀全球代理
     - RULE-SET,google_ip,Google,no-resolve
     - RULE-SET,netflix_ip,NETFLIX,no-resolve
@@ -350,7 +353,11 @@ rule-providers:
   Twitch_domain:
     <<: *domain_mrs
     url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitch.mrs"
-    path: ./ruleset/Twitch_domain.mrs  
+    path: ./ruleset/Twitch_domain.mrs
+  Cloudflare_domain:
+    <<: *domain_mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cloudflare.mrs"
+    path: ./ruleset/Cloudflare_domain.mrs 
   geolocation-!cn:
     <<: *domain_mrs
     url: "https://jsd.onmicrosoft.cn/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.mrs"
